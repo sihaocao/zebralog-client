@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.ZebralogEntry {
+    display: flex;
+    justify-content: left;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    border-bottom: 1px #DFE3E7 solid;
+}
+
+.ZebralogEntry:nth-child(even) {
+    background-color: #ECECEC;
+}
+
+.ZebralogEntry__game_date {
+    width: 75%;
+    text-align: left;
+    padding-left: 2%;
+}
+
+.ZebralogEntry__site {
+    width: 100%;
+    text-align: left;
+}
+
+.ZebralogEntry__distance {
+    width: 75%;
+    text-align: left;
+}
+
+.ZebralogEntry__paid {
+    width: 50%;
+    text-align: left;
+}
+
+.ZebralogEntry__type {
+    width: 75%;
+    text-align: left;
+}
+
+.ZebralogEntry__amount {
+    width: 75%;
+    text-align: left;
+}
+
+.ZebralogEntry__notes {
+    width: 100%;
+    text-align: left;
+}
+
+.ZebralogEntry__buttons {
+    width: 50%;
+    text-align: left;
+}

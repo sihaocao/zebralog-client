@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.ZebralogList {
+    padding: 0%;
+}
+
+.Zebralog__ListHeaders {
+    display: flex;
+    list-style-type: none;
+    border-top: 1px #E1E5E8 solid;
+    border-bottom: 2px #DEE2E6 solid;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.ZebralogList__game_date {
+    width: 75%;
+    text-align: left;
+    padding-left: 2%;
+}
+
+.ZebralogList__site {
+    width: 100%;
+    text-align: left;
+}
+
+.ZebralogList__distance {
+    width: 75%;
+    text-align: left;
+}
+
+.ZebralogList__paid {
+    width: 50%;
+    text-align: left;
+}
+
+.ZebralogList__type {
+    width: 75%;
+    text-align: left;
+}
+
+.ZebralogList__amount {
+    width: 75%;
+    text-align: left;
+}
+
+.ZebralogList__notes {
+    width: 100%;
+    text-align: left;
+}
+
+.ZebralogList__Actions {
+    width: 50%;
+    text-align: left;
+}
+
+.ZebralogList__List {
+    display: block;
+    padding-left: 0%;
+    padding-right: 0%;
+    width: 90%;
+    margin-top: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0%;
+}

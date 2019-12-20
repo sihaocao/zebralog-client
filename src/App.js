@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import AddZebralog from './AddZebralog/AddZebralog';
+// import EditZebralog from './EditZebralog/EditZebralog';
+import ZebralogList from './ZebralogList/ZebralogList';
+import ZebralogsContext from './ZebralogsContext';
 import Nav from './Nav/Nav';
 import config from './config';
 import './App.css';
-import ZebralogsContext from './ZebralogsContext';
 
 class App extends Component {
   state = {
@@ -22,6 +24,15 @@ class App extends Component {
   addZebralog = zebralog => {
     this.setState({
       zebralogs: [ ...this.state.zebralogs, zebralog ],
+    })
+  }
+
+  deleteZebralog = zebralogId => {
+    const newZebralogs = this.state.zebralogs.filter(zl =>
+      zl.id !== zebralogId
+    )
+    this.setState({
+      zebralogs: newZebralogs
     })
   }
 
@@ -49,13 +60,19 @@ class App extends Component {
     const contextValue = {
       zebralogs: this.state.zebralogs,
       addZebralog: this.addZebralog,
+      deleteZebralog: this.deleteZebralog,
     }
     return (
       <main className='App'>
-        <h1>Zebra Logs</h1>
+        <h1 className='App__Title'>Zebra Logs</h1>
         <ZebralogsContext.Provider value={contextValue}>
           <Nav />
           <div className='content' aria-live='polite'>
+            <Route
+              exact
+              path='/'
+              component={ZebralogList}
+            />
             <Route
               path='/add-zebralog'
               component={AddZebralog}

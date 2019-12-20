@@ -12,7 +12,16 @@ class AddZebralog extends Component {
 
     state = {
         error: null,
+        paid: 'Yes',
+        type: 'Other',
     };
+
+    handleChange = e => {
+        this.setState({
+            paid: e.target.value,
+            type: e.target.value,
+        })
+    }
 
     handlesubmit = e => {
         e.preventDefault()
@@ -66,7 +75,7 @@ class AddZebralog extends Component {
         const { error } = this.state;
         return (
             <section className='AddZebralog'>
-                <h2>Create an entry</h2>
+                <h2 className='AddZebralog__header'>Create an entry</h2>
                 <form
                     className='AddZebralog__form'
                     onSubmit={this.handlesubmit}
@@ -97,13 +106,13 @@ class AddZebralog extends Component {
                             type='text'
                             name='site'
                             id='site'
-                            placeholder='Boston'
+                            placeholder='Boston High School'
                             required
                         />
                     </div>
                     <div>
                         <label htmlFor='distance'>
-                            Distance (mi)
+                            Distance (miles)
                             {' '}
                             <Required />
                         </label>
@@ -122,13 +131,17 @@ class AddZebralog extends Component {
                             {' '}
                             <Required />
                         </label>
-                        <input
-                            type='text'
+                        <select 
+                            value={this.state.paid} 
+                            onChange={this.handleChange} 
                             name='paid'
                             id='paid'
-                            defaultValue='Yes'
                             required
-                        />
+                        >
+                            <option defaultValue value='Yes'>Yes</option>
+                            <option value='Pending'>Pending</option>
+                            <option value='No'>No</option>
+                        </select>
                     </div>
                     <div>
                         <label htmlFor='type'>
@@ -136,13 +149,19 @@ class AddZebralog extends Component {
                             {' '}
                             <Required />
                         </label>
-                        <input
-                            type='text'
+                        <select
+                            value={this.state.type}
+                            onChange={this.handleChange}
                             name='type'
                             id='type'
-                            placeholder='Varsity'
                             required
-                        />
+                        >
+                            <option defaultValue value='Other'>Other</option>
+                            <option value='Subvarsity'>Subvarsity</option>
+                            <option value='Tournament'>Tournament</option>
+                            <option value='Varsity'>Varsity</option>
+                            <option value='Youth'>Youth</option>
+                        </select>
                     </div>
                     <div>
                         <label htmlFor='amount'>
@@ -174,12 +193,12 @@ class AddZebralog extends Component {
                         />
                     </div>
                     <div className='AddZebralog__buttons'>
-                        <button type='button' onClick={this.handleClickCancel}>
+                        <button type='button' onClick={this.handleClickCancel} className='AddZebralog__CancelButton'>
                             Cancel
                         </button>
                         {' '}
-                        <button type='submit'>
-                            Save
+                        <button type='submit' className='AddZebralog__AddButton'>
+                            Submit
                         </button>
                     </div>
                 </form>
