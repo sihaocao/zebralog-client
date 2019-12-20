@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import AddZebralog from './AddZebralog/AddZebralog';
-// import EditZebralog from './EditZebralog/EditZebralog';
+import EditZebralog from './EditZebralog/EditZebralog';
 import ZebralogList from './ZebralogList/ZebralogList';
 import ZebralogsContext from './ZebralogsContext';
 import Nav from './Nav/Nav';
@@ -24,7 +24,7 @@ class App extends Component {
 
   addZebralog = zebralog => {
     this.setState({
-      zebralogs: [ ...this.state.zebralogs, zebralog ],
+      zebralogs: [ zebralog, ...this.state.zebralogs ],
     })
   }
 
@@ -57,11 +57,20 @@ class App extends Component {
       })
   }
 
+  updateZebralog = updatedZebralog => {
+    this.setState({
+      zebralogs: this.state.zebralogs.map(zl =>
+        (zl.id !== updatedZebralog.id) ? zl : updatedZebralog  
+      )
+    })
+  }
+
   render() {
     const contextValue = {
       zebralogs: this.state.zebralogs,
       addZebralog: this.addZebralog,
       deleteZebralog: this.deleteZebralog,
+      updateZebralog: this.updateZebralog,
     }
     return (
       <main className='App'>
@@ -69,8 +78,10 @@ class App extends Component {
           <img className='App__Logo' src={SiteLogo} alt='site logo of zebra emblem'/>
           <h1 className='App__Title'>ZebraLogs</h1>
         </div>
+        <div className='Navigation__Buttons'>
+            <Nav />
+        </div>
         <ZebralogsContext.Provider value={contextValue}>
-          <Nav />
           <div className='content' aria-live='polite'>
             <Route
               exact
@@ -80,6 +91,10 @@ class App extends Component {
             <Route
               path='/add-zebralog'
               component={AddZebralog}
+            />
+            <Route
+              path='/edit/:zebralogId'
+              component={EditZebralog}
             />
           </div>
         </ZebralogsContext.Provider>

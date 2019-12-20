@@ -17,8 +17,7 @@
 }
 
 .ZebralogEntry:nth-child(even) {
-    background-color: #202020;
-    color: #FFFFFF;
+    background-color: #F5F5F5;
 }
 
 .ZebralogEntry__game_date {
@@ -62,14 +61,38 @@
     text-align: left;
 }
 
+.Edit__Button {
+    font-size: 1em;
+    text-decoration: none;
+    background-color: #FDC030;
+    color: #222628;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-radius: 10px;
+}
+
 .Delete__Button {
     font-size: 1em;
     background-color: #D83749;
-    color: white;
+    color: #F8E0E2;
     padding: 2px 6px 2px 6px;
     cursor: pointer;
     border-top: 1px solid #CCCCCC;
-    border-right: 1px solid #333333;
-    border-bottom: 1px solid #333333;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
     border-left: 1px solid #CCCCCC;
+    border-radius: 10px;
+}
+
+.Edit__Button:hover {
+    background-color: #FFA500;
+    color: white;
+}
+
+.Delete__Button:hover {
+    background-color: #FF0000;
+    color: white;
 }

@@ -5,11 +5,17 @@ import './Nav.css';
 export default function Nav(props) {
     return (
         <nav className='Nav'>
-            <Link to={'/'}>
+            <Link 
+                to={'/'}
+                className='AllEntries__Button'
+            >
                 All Entries
             </Link>
             {' '}
-            <Link to={'/add-zebralog'}>
+            <Link 
+                to={'/add-zebralog'}
+                className='AddEntry__Button'
+            >
                 Add Entry
             </Link>
         </nav>

@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ZebralogsContext from '../ZebralogsContext';
 import config from '../config';
 import './ZebralogEntry.css';
@@ -51,13 +51,18 @@ export default function ZebralogEntry(props) {
                         {props.notes}
                     </div>
                     <div className='ZebralogEntry__buttons'>
-                        {/* <Link to={`/edit/${props.id}`}>
+                        <Link 
+                            to={`/edit/${props.id}`}
+                            className='Edit__Button'
+                        >
                             Edit
                         </Link>
-                        {' '} */}
+                        {' '}
                         <button 
                             className='Delete__Button'
-                            onClick={() => deleteZebralogRequest(props.id, context.deleteZebralog)}
+                            onClick={() => 
+                                deleteZebralogRequest(props.id, context.deleteZebralog)
+                            }
                         >
                             Del
                         </button>

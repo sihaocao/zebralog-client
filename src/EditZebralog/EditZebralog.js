@@ -1,45 +1,31 @@
 import React, { Component } from 'react';
 import ZebralogsContext from '../ZebralogsContext';
 import config from '../config';
-import './AddZebralog.css';
+import './EditZebralog.css';
 
 const Required = () => (
-    <span className='AddZebralog__required'>*</span>
-);
+    <span className='EditZebralog__required'>*</span>
+)
 
-class AddZebralog extends Component {
+class EditZebralog extends Component {
     static contextType = ZebralogsContext;
 
     state = {
         error: null,
-        paid: 'Yes',
-        type: 'Other',
-    };
-
-    handleChange = e => {
-        this.setState({
-            paid: e.target.value,
-            type: e.target.value,
-        })
+        id: '',
+        game_date: '',
+        site: '',
+        distance: '',
+        paid: '',
+        type: '',
+        amount: '',
+        notes: '',
     }
 
-    handlesubmit = e => {
-        e.preventDefault()
-        // get the form fields from the event
-        const { game_date, site, distance, paid, type, amount, notes } = e.target
-        const zebralog = {
-            game_date: game_date.value,
-            site: site.value,
-            distance: distance.value,
-            paid: paid.value,
-            type: type.value,
-            amount: amount.value,
-            notes: notes.value,
-        }
-        this.setState({ error: null })
-        fetch(`${config.API_ENDPOINT}/api/zebralogs`, {
-            method: 'POST',
-            body: JSON.stringify(zebralog),
+    componentDidMount() {
+        const { zebralogId } = this.props.match.params;
+        fetch(`${config.API_ENDPOINT}/api/zebralogs/${zebralogId}`, {
+            method: 'GET',
             headers: {
                 'content-type': 'application/json',
             }
@@ -50,15 +36,72 @@ class AddZebralog extends Component {
                 }
                 return res.json()
             })
-            .then(data => {
-                game_date.value = ''
-                site.value = ''
-                distance.value = ''
-                paid.value = ''
-                type.value = ''
-                amount.value = ''
-                notes.value = ''
-                this.context.addZebralog(data)
+            .then(responseData => {
+                this.setState({
+                    id: responseData.id,
+                    game_date: responseData.game_date,
+                    site: responseData.site,
+                    distance: responseData.distance,
+                    paid: responseData.paid,
+                    type: responseData.type,
+                    amount: responseData.amount,
+                    notes: responseData.notes,
+                })
+            })
+            .catch(error => {
+                console.error(error)
+                this.setState({ error })
+            })
+    }
+
+    handleChangeGameDate = e => {
+        this.setState({ game_date: e.target.value })
+    };
+
+    handleChangeSite = e => {
+        this.setState({ site: e.target.value })
+    };
+
+    handleChangeDistance = e => {
+        this.setState({ distance: e.target.value })
+    };
+
+    handleChangePaid = e => {
+        this.setState({ paid: e.target.value })
+    };
+
+    handleChangeType = e => {
+        this.setState({ type: e.target.value })
+    };
+
+    handleChangeAmount = e => {
+        this.setState({ amount: e.target.value })
+    };
+
+    handleChangeNotes = e => {
+        this.setState({ notes: e.target.value })
+    };
+
+    handleSubmit = e => {
+        e.preventDefault()
+        const { zebralogId } = this.props.match.params;
+        const { id, game_date, site, distance, paid, type, amount, notes } = this.state;
+        const newZebralog = { id, game_date, site, distance, paid, type, amount, notes };
+        fetch(`${config.API_ENDPOINT}/api/zebralogs/${zebralogId}`, {
+            method: 'PATCH',
+            body: JSON.stringify(newZebralog),
+            headers: {
+                'content-type': 'application/json',
+            },
+        })
+            .then(res => {
+                if (!res.ok) {
+                    return res.json().then(error => Promise.reject(error))
+                }
+            })
+            .then(() => {
+                this.resetFields(newZebralog)
+                this.context.updateZebralog(newZebralog)
                 this.props.history.push('/')
             })
             .catch(error => {
@@ -67,22 +110,39 @@ class AddZebralog extends Component {
             })
     }
 
+    resetFields = (newFields) => {
+        this.setState({
+            id: newFields.id || '',
+            game_date: newFields.game_date || '',
+            site: newFields.site || '',
+            distance: newFields.distance || '',
+            paid: newFields.paid || '',
+            type: newFields.type || '',
+            amount: newFields.amount || '',
+            notes: newFields.notes || '',
+        })
+    }
+
     handleClickCancel = () => {
         this.props.history.push('/')
     };
 
     render() {
-        const { error } = this.state;
+        const { error, game_date, site, distance, paid, type, amount, notes } = this.state;
         return (
-            <section className='AddZebralog'>
-                <h2 className='AddZebralog__header'>Create entry</h2>
+            <section className='EditZebralog'>
+                <h2 className='EditZebralog__header'>Edit entry</h2>
                 <form
-                    className='AddZebralog__form'
-                    onSubmit={this.handlesubmit}
+                    className='EditZebralog__form'
+                    onSubmit={this.handleSubmit}
                 >
-                    <div className='AddZebralog__error' role='alert'>
+                    <div className='EditZebralog__error' role='alert'>
                         {error && <p>{error.message}</p>}
                     </div>
+                    <input
+                        type='hidden'
+                        name='id'
+                    />
                     <div>
                         <label htmlFor='game_date'>
                             Game Date
@@ -94,6 +154,8 @@ class AddZebralog extends Component {
                             name='game_date'
                             id='game_date'
                             required
+                            value={game_date}
+                            onChange={this.handleChangeGameDate}
                         />
                     </div>
                     <div>
@@ -108,6 +170,8 @@ class AddZebralog extends Component {
                             id='site'
                             placeholder='Boston High School'
                             required
+                            value={site}
+                            onChange={this.handleChangeSite}
                         />
                     </div>
                     <div>
@@ -120,9 +184,11 @@ class AddZebralog extends Component {
                             type='number'
                             name='distance'
                             id='distance'
-                            defaultValue='0'
+                            placeholder='0'
                             min='0'
                             required
+                            value={distance}
+                            onChange={this.handleChangeDistance}
                         />
                     </div>
                     <div>
@@ -132,13 +198,13 @@ class AddZebralog extends Component {
                             <Required />
                         </label>
                         <select 
-                            value={this.state.paid} 
-                            onChange={this.handleChange} 
                             name='paid'
                             id='paid'
                             required
+                            value={paid} 
+                            onChange={this.handleChangePaid}
                         >
-                            <option defaultValue value='Yes'>Yes</option>
+                            <option value='Yes'>Yes</option>
                             <option value='Pending'>Pending</option>
                             <option value='No'>No</option>
                         </select>
@@ -150,13 +216,13 @@ class AddZebralog extends Component {
                             <Required />
                         </label>
                         <select
-                            value={this.state.type}
-                            onChange={this.handleChange}
                             name='type'
                             id='type'
                             required
+                            value={type}
+                            onChange={this.handleChangeType}
                         >
-                            <option defaultValue value='Other'>Other</option>
+                            <option value='Other'>Other</option>
                             <option value='Subvarsity'>Subvarsity</option>
                             <option value='Tournament'>Tournament</option>
                             <option value='Varsity'>Varsity</option>
@@ -176,6 +242,8 @@ class AddZebralog extends Component {
                             placeholder='0'
                             min='0'
                             required
+                            value={amount}
+                            onChange={this.handleChangeAmount}
                         />
                     </div>
                     <div>
@@ -188,17 +256,19 @@ class AddZebralog extends Component {
                             type='text'
                             name='notes'
                             id='notes'
-                            defaultValue='None'
+                            placeholder='None'
                             required
+                            value={notes}
+                            onChange={this.handleChangeNotes}
                         />
                     </div>
-                    <div className='AddZebralog__buttons'>
-                        <button type='button' onClick={this.handleClickCancel} className='AddZebralog__CancelButton'>
+                    <div className='EditZebralog__buttons'>
+                        <button type='button' onClick={this.handleClickCancel} className='EditZebralog__CancelButton'>
                             Cancel
                         </button>
                         {' '}
-                        <button type='submit' className='AddZebralog__AddButton'>
-                            Submit
+                        <button type='submit' className='EditZebralog__EditButton'>
+                            Save
                         </button>
                     </div>
                 </form>
@@ -207,4 +277,4 @@ class AddZebralog extends Component {
     }
 }
 
-export default AddZebralog;
+export default EditZebralog;

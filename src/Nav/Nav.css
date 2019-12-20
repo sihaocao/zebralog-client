@@ -1,4 +1,37 @@
-.Nav {
-    text-align: center;
-    margin-top: 3%;
+.AllEntries__Button {
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #57595D;
+    color: #F4FAF5;
+    padding: 6px 18px 6px 18px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-radius: 10px;
+}
+
+.AddEntry__Button {
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #31A54A;
+    color: #F4FAF5;
+    padding: 6px 18px 6px 18px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-radius: 10px;
+}
+
+.AllEntries__Button:hover {
+    background-color: #D4D4D4;
+    color: black;
+}
+
+.AddEntry__Button:hover {
+    background-color: #32CC32;
+    color: #303030;
 }
