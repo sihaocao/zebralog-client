@@ -17,7 +17,8 @@
 }
 
 .ZebralogEntry:nth-child(even) {
-    background-color: #ECECEC;
+    background-color: #202020;
+    color: #FFFFFF;
 }
 
 .ZebralogEntry__game_date {
@@ -59,4 +60,16 @@
 .ZebralogEntry__buttons {
     width: 50%;
     text-align: left;
+}
+
+.Delete__Button {
+    font-size: 1em;
+    background-color: #D83749;
+    color: white;
+    padding: 2px 6px 2px 6px;
+    cursor: pointer;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
 }

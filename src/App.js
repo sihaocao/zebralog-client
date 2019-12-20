@@ -6,6 +6,7 @@ import ZebralogList from './ZebralogList/ZebralogList';
 import ZebralogsContext from './ZebralogsContext';
 import Nav from './Nav/Nav';
 import config from './config';
+import SiteLogo from './Zebralog-logo.png';
 import './App.css';
 
 class App extends Component {
@@ -64,7 +65,10 @@ class App extends Component {
     }
     return (
       <main className='App'>
-        <h1 className='App__Title'>Zebra Logs</h1>
+        <div className='App__Logo__Title'>
+          <img className='App__Logo' src={SiteLogo} alt='site logo of zebra emblem'/>
+          <h1 className='App__Title'>ZebraLogs</h1>
+        </div>
         <ZebralogsContext.Provider value={contextValue}>
           <Nav />
           <div className='content' aria-live='polite'>

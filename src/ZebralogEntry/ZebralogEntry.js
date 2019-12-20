@@ -55,8 +55,11 @@ export default function ZebralogEntry(props) {
                             Edit
                         </Link>
                         {' '} */}
-                        <button onClick={() => deleteZebralogRequest(props.id, context.deleteZebralog)}>
-                            Delete
+                        <button 
+                            className='Delete__Button'
+                            onClick={() => deleteZebralogRequest(props.id, context.deleteZebralog)}
+                        >
+                            Del
                         </button>
                     </div>
                 </li>
