@@ -1,4 +1,27 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.Download__Button {
+    margin-right: 1.4%;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #157FFB;
+    color: #FDFEFF;
+    padding: 6px 18px 6px 18px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-radius: 10px;
+}
+
 .AllEntries__Button {
+    margin-right: 1%;
     font-size: 1em;
     font-weight: bold;
     text-decoration: none;
@@ -24,6 +47,11 @@
     border-bottom: 1px solid #CCCCCC;
     border-left: 1px solid #CCCCCC;
     border-radius: 10px;
+}
+
+.Download__Button:hover {
+    background-color: #9FEBED;
+    color: #333333;
 }
 
 .AllEntries__Button:hover {

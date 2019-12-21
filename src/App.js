@@ -79,7 +79,7 @@ class App extends Component {
           <h1 className='App__Title'>ZebraLogs</h1>
         </div>
         <div className='Navigation__Buttons'>
-            <Nav />
+            <Nav db_values={this.state.zebralogs} />
         </div>
         <ZebralogsContext.Provider value={contextValue}>
           <div className='content' aria-live='polite'>
