@@ -13,12 +13,6 @@ export default function Nav(props) {
             >
                 Download CSV
             </CSVLink>
-            <Link 
-                to={'/'}
-                className='AllEntries__Button'
-            >
-                All Entries
-            </Link>
             {' '}
             <Link 
                 to={'/add-zebralog'}

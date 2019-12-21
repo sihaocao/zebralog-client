@@ -78,9 +78,14 @@ class App extends Component {
           <img className='App__Logo' src={SiteLogo} alt='site logo of zebra emblem'/>
           <h1 className='App__Title'>ZebraLogs</h1>
         </div>
-        <div className='Navigation__Buttons'>
+        <Route
+          exact
+          path='/'
+        >
+          <div className='Navigation__Buttons'>
             <Nav db_values={this.state.zebralogs} />
-        </div>
+          </div>
+        </Route>
         <ZebralogsContext.Provider value={contextValue}>
           <div className='content' aria-live='polite'>
             <Route
