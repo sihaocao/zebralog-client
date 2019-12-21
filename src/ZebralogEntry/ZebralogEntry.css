@@ -77,7 +77,7 @@
 .Delete__Button {
     font-size: 1em;
     background-color: #D83749;
-    color: #F8E0E2;
+    color: #FFFFFF;
     padding: 2px 6px 2px 6px;
     cursor: pointer;
     border-top: 1px solid #CCCCCC;
@@ -88,11 +88,11 @@
 }
 
 .Edit__Button:hover {
-    background-color: #FFA500;
-    color: white;
+    background-color: #F96C02;
+    color: #FFFFFF;
 }
 
 .Delete__Button:hover {
     background-color: #FF0000;
-    color: white;
+    color: #333333;
 }

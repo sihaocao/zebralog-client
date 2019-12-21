@@ -5,23 +5,26 @@ import config from '../config';
 import './ZebralogEntry.css';
 
 function deleteZebralogRequest(zebralogID, cb) {
-    fetch(`${config.API_ENDPOINT}/api/zebralogs/${zebralogID}`, {
-        method: 'DELETE',
-        headers: {
-            'content-type': 'application/json',
-        }
-    })
-        .then(res => {
-            if (!res.ok) {
-                return res.json().then(error => Promise.reject(error))
+    let confirmDelete = window.confirm('Confirm to delete this entry? Deleted entries cannot be recovered!')
+    if(confirmDelete) {
+        fetch(`${config.API_ENDPOINT}/api/zebralogs/${zebralogID}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
             }
         })
-        .then(data => {
-            cb(zebralogID)
-        })
-        .catch(error => {
-            console.error(error)
-        })
+            .then(res => {
+                if (!res.ok) {
+                    return res.json().then(error => Promise.reject(error))
+                }
+            })
+            .then(data => {
+                cb(zebralogID)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
 }
 
 export default function ZebralogEntry(props) {
