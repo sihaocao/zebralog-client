@@ -36,14 +36,12 @@ class ZebralogList extends Component {
     }
 
     onChange = e => {
-        this.setState({
-            site: e.target.value
-        });
+        const { onChange } = this.context
+        onChange("text");
     }
 
     render() {
         const { zebralogs } = this.context
-        const { onChange } = this.context
         return (
             <Fragment>
                 <form className='ZebralogList__FormGroup'>
