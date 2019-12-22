@@ -37,7 +37,7 @@ class ZebralogList extends Component {
 
     onChange = e => {
         const { onChange } = this.context
-        onChange("text");
+        onChange(e.target.value);
     }
 
     render() {
