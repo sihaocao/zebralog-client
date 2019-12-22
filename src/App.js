@@ -65,12 +65,18 @@ class App extends Component {
     })
   }
 
+  onChange = e => {
+    const { zebralogs } = this.context
+    zebralogs.filter(zebralog => zebralog.site.includes(e.target.value))
+  }
+
   render() {
     const contextValue = {
       zebralogs: this.state.zebralogs,
       addZebralog: this.addZebralog,
       deleteZebralog: this.deleteZebralog,
       updateZebralog: this.updateZebralog,
+      onChange: this.onChange,
     }
     return (
       <main className='App'>

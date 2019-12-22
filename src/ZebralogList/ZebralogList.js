@@ -42,7 +42,6 @@ class ZebralogList extends Component {
 
     render() {
         const { zebralogs } = this.context
-        const filteredZebralogs = zebralogs.filter(zebralog => zebralog.site.includes(e.target.value))
         return (
             <Fragment>
                 <form className='ZebralogList__FormGroup'>
@@ -64,10 +63,10 @@ class ZebralogList extends Component {
                         {this.renderHeaders()}
                     </ul>
                     <ul className='ZebralogList__List'>
-                        {filteredZebralogs.map(filteredZebralog =>
+                        {zebralogs.map(zebralog =>
                             <ZebralogEntry
-                                key={filteredZebralog.id}
-                                {...filteredZebralog}
+                                key={zebralog.id}
+                                {...zebralog}
                             />
                         )}
                     </ul>
