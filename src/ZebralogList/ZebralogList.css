@@ -14,7 +14,7 @@
     border-top: 1px #E1E5E8 solid;
     border-bottom: 2px #DEE2E6 solid;
     width: 90%;
-    margin-top: 5%;
+    margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0%;
@@ -74,4 +74,13 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0%;
+}
+
+.ZebralogList__FormGroup {
+    margin-top: 3%;
+    text-align: center;
+}
+
+.Zebralogs__Site__SearchBox {
+    font-size: 1em;
 }
