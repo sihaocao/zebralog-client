@@ -94,7 +94,7 @@ class App extends Component {
             <Nav db_values={this.state.zebralogs} />
           </div>
         </Route>
-        <ZebralogsContext.Provider value={contextValue}>
+        <ZebralogsContext.Provider value={{contextValue, onChange: this.onChange}}>
           <div className='content' aria-live='polite'>
             <Route
               exact
