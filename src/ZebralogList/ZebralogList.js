@@ -43,6 +43,7 @@ class ZebralogList extends Component {
 
     render() {
         const { zebralogs } = this.context
+        const { onChange } = this.context
         return (
             <Fragment>
                 <form className='ZebralogList__FormGroup'>
