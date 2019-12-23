@@ -18,7 +18,7 @@ export default function Nav(props) {
                 to={'/add-zebralog'}
                 className='AddEntry__Button'
             >
-                Add Entry
+                Create Entry
             </Link>
         </nav>
     )

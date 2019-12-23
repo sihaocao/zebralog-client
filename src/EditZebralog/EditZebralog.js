@@ -131,7 +131,7 @@ class EditZebralog extends Component {
         const { error, game_date, site, distance, paid, type, amount, notes } = this.state;
         return (
             <section className='EditZebralog'>
-                <h2 className='EditZebralog__header'>Edit entry</h2>
+                <h2 className='EditZebralog__header'>Edit Entry</h2>
                 <form
                     className='EditZebralog__form'
                     onSubmit={this.handleSubmit}

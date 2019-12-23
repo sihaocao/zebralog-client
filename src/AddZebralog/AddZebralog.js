@@ -75,7 +75,7 @@ class AddZebralog extends Component {
         const { error } = this.state;
         return (
             <section className='AddZebralog'>
-                <h2 className='AddZebralog__header'>Create entry</h2>
+                <h2 className='AddZebralog__header'>Create Entry</h2>
                 <form
                     className='AddZebralog__form'
                     onSubmit={this.handlesubmit}
