@@ -12,7 +12,8 @@ import './App.css';
 class App extends Component {
   state = {
     zebralogs: [],
-    error: null,
+    filteredZebralogs: [],
+    error: null
   };
 
   setZebralogs = zebralogs => {
@@ -74,7 +75,8 @@ class App extends Component {
 
   render() {
     const contextValue = {
-      zebralogs: this.state.filteredZebralogs, // name it as filteredZebralogs
+      zebralogs: this.state.zebralogs,
+      filteredZebralogs: this.state.filteredZebralogs, // name it as filteredZebralogs
       addZebralog: this.addZebralog,
       deleteZebralog: this.deleteZebralog,
       updateZebralog: this.updateZebralog,
@@ -94,7 +96,7 @@ class App extends Component {
             <Nav db_values={this.state.zebralogs} />
           </div>
         </Route>
-        <ZebralogsContext.Provider value={{contextValue, onChange: this.onChange}}>
+        <ZebralogsContext.Provider value={contextValue}>
           <div className='content' aria-live='polite'>
             <Route
               exact

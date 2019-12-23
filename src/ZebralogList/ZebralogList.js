@@ -36,12 +36,13 @@ class ZebralogList extends Component {
     }
 
     onChange = e => {
-        const { onChange } = this.context
+        const { onChange } = this.context;
         onChange(e.target.value);
+        // this.setState({ site: e.target.value })
     }
 
     render() {
-        const { zebralogs } = this.context
+        const { filteredZebralogs } = this.context;
         return (
             <Fragment>
                 <form className='ZebralogList__FormGroup'>
@@ -54,7 +55,7 @@ class ZebralogList extends Component {
                         className='Zebralogs__Site__SearchBox'
                         placeholder='site description'
                         name='site'
-                        value={this.state.site}
+                        // value={this.state.site}
                         onChange={this.onChange}
                     />
                 </form>
@@ -63,7 +64,7 @@ class ZebralogList extends Component {
                         {this.renderHeaders()}
                     </ul>
                     <ul className='ZebralogList__List'>
-                        {zebralogs.map(zebralog =>
+                        {filteredZebralogs.map(zebralog =>
                             <ZebralogEntry
                                 key={zebralog.id}
                                 {...zebralog}
