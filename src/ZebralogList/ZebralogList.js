@@ -22,8 +22,6 @@ class ZebralogList extends Component {
             { id: 'notes', description: 'Notes', cn: 'ZebralogList__notes' },
             { id: 'actions', description: 'Actions', cn: 'ZebralogList__Actions' },
         ],
-        // site used for 'search by site' filter functionality
-        site: '',
     }
 
     renderHeaders() {
@@ -38,7 +36,6 @@ class ZebralogList extends Component {
     onChange = e => {
         const { onChange } = this.context;
         onChange(e.target.value);
-        // this.setState({ site: e.target.value })
     }
 
     render() {
@@ -47,15 +44,14 @@ class ZebralogList extends Component {
             <Fragment>
                 <form className='ZebralogList__FormGroup'>
                     <label htmlFor='search_for'>
-                        Search by:
+                        Search for:
                         {' '}
                     </label>
                     <input
                         type='text'
                         className='Zebralogs__Site__SearchBox'
-                        placeholder='site description'
+                        placeholder='Site description...'
                         name='site'
-                        // value={this.state.site}
                         onChange={this.onChange}
                     />
                 </form>
@@ -64,10 +60,10 @@ class ZebralogList extends Component {
                         {this.renderHeaders()}
                     </ul>
                     <ul className='ZebralogList__List'>
-                        {filteredZebralogs.map(zebralog =>
+                        {filteredZebralogs.map(filteredZebralog =>
                             <ZebralogEntry
-                                key={zebralog.id}
-                                {...zebralog}
+                                key={filteredZebralog.id}
+                                {...filteredZebralog}
                             />
                         )}
                     </ul>

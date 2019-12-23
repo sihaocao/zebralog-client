@@ -4,8 +4,19 @@
     margin: 0;
 }
 
-.ZebralogList {
-    padding: 0%;
+.ZebralogList__FormGroup {
+    margin: 3% auto;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.Zebralogs__Site__SearchBox {
+    margin-left: 0.25%;
+    font-size: 1em;
+    padding: 3px;
+    width: 13%;
+    border: 2px #4B4C4C solid;
+    border-radius: 10px;
 }
 
 .Zebralog__ListHeaders {
@@ -67,20 +78,7 @@
 
 .ZebralogList__List {
     display: block;
-    padding-left: 0%;
-    padding-right: 0%;
+    padding: 0%;
     width: 90%;
-    margin-top: 0%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0%;
-}
-
-.ZebralogList__FormGroup {
-    margin-top: 3%;
-    text-align: center;
-}
-
-.Zebralogs__Site__SearchBox {
-    font-size: 1em;
+    margin: 0% auto;
 }

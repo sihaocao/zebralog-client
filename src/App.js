@@ -19,13 +19,15 @@ class App extends Component {
   setZebralogs = zebralogs => {
     this.setState({
       zebralogs,
+      filteredZebralogs: zebralogs,
       error: null,
     })
   }
 
   addZebralog = zebralog => {
     this.setState({
-      zebralogs: [ zebralog, ...this.state.zebralogs ],
+      zebralogs: [ zebralog, ...this.state.zebralogs],
+      filteredZebralogs: [ zebralog, ...this.state.filteredZebralogs ],
     })
   }
 
@@ -35,6 +37,12 @@ class App extends Component {
     )
     this.setState({
       zebralogs: newZebralogs
+    })
+    const newFilteredZebralogs = this.state.filteredZebralogs.filter(zl =>
+      zl.id !== zebralogId
+    )
+    this.setState({
+      filteredZebralogs: newFilteredZebralogs
     })
   }
 
@@ -64,10 +72,15 @@ class App extends Component {
         (zl.id !== updatedZebralog.id) ? zl : updatedZebralog  
       )
     })
+    this.setState({
+      filteredZebralogs: this.state.filteredZebralogs.map(zl =>
+        (zl.id !== updatedZebralog.id) ? zl : updatedZebralog  
+      )
+    })
   }
 
   onChange = val => {
-    const result = this.state.zebralogs.filter(zebralog => zebralog.site.includes(val))
+    const result = this.state.zebralogs.filter(zebralog => zebralog.site.toLowerCase().includes(val.toLowerCase()))
     this.setState({
       filteredZebralogs: result
     })
