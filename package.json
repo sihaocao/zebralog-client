@@ -4,9 +4,6 @@
   "private": true,
   "description": "A simple sports officials log app",
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
-    "@testing-library/user-event": "^7.2.1",
     "react": "^16.12.0",
     "react-csv": "^1.1.2",
     "react-dom": "^16.12.0",
@@ -15,7 +12,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "prebuild": "CI=true react-scripts test --colors",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
