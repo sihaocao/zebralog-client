@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
+import LandingPage from './LandingPage/LandingPage';
 import AddZebralog from './AddZebralog/AddZebralog';
 import EditZebralog from './EditZebralog/EditZebralog';
 import ZebralogList from './ZebralogList/ZebralogList';
@@ -96,37 +97,40 @@ class App extends Component {
       onChange: this.onChange,
     } 
     return (
-      <main className='App'>
-        <div className='App__Logo__Title'>
-          <img className='App__Logo' src={SiteLogo} alt='site logo of zebra emblem'/>
-          <h1 className='App__Title'>ZebraLogs</h1>
-        </div>
-        <Route
-          exact
-          path='/'
-        >
-          <div className='Navigation__Buttons'>
-            <Nav db_values={this.state.zebralogs} />
+      <Fragment>
+        <LandingPage />
+        <main className='App'>
+          <div className='App__Logo__Title'>
+            <img className='App__Logo' src={SiteLogo} alt='site logo of zebra emblem'/>
+            <h1 className='App__Title'>ZebraLogs</h1>
           </div>
-        </Route>
-        <ZebralogsContext.Provider value={contextValue}>
-          <div className='content' aria-live='polite'>
-            <Route
-              exact
-              path='/'
-              component={ZebralogList}
-            />
-            <Route
-              path='/add-zebralog'
-              component={AddZebralog}
-            />
-            <Route
-              path='/edit/:zebralogId'
-              component={EditZebralog}
-            />
-          </div>
-        </ZebralogsContext.Provider>
-      </main>
+          <Route
+            exact
+            path='/'
+          >
+            <div className='Navigation__Buttons'>
+              <Nav db_values={this.state.zebralogs} />
+            </div>
+          </Route>
+          <ZebralogsContext.Provider value={contextValue}>
+            <div className='content' aria-live='polite'>
+              <Route
+                exact
+                path='/'
+                component={ZebralogList}
+              />
+              <Route
+                path='/add-zebralog'
+                component={AddZebralog}
+              />
+              <Route
+                path='/edit/:zebralogId'
+                component={EditZebralog}
+              />
+            </div>
+          </ZebralogsContext.Provider>
+        </main>
+      </Fragment>
     )
   }
 }
