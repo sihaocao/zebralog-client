@@ -8,7 +8,7 @@ class LandingPage extends Component {
             ZebralogsContext.landingPageVisited = true;
         }
         return (
-            <ZebralogsContext.Consumer>
+            // <ZebralogsContext.Consumer>
                 <div className='landing-page'>
                     <h1>Welcome to Zebralogs!</h1>
                     <h3 className='app-description'>This app allows any sports official to track their game details and payment information. It includes a 'Download CSV' button for organized record keeping.</h3>
@@ -16,7 +16,7 @@ class LandingPage extends Component {
                         Let's Get Started!
                     </button>
                 </div>
-            </ZebralogsContext.Consumer>
+            // </ZebralogsContext.Consumer>
         )
     }
 }
