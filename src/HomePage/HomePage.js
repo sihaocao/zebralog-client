@@ -8,7 +8,7 @@ class HomePage extends Component {
     render() {
         return (
             <ZebralogsContext.Consumer>
-                {() => { !ZebralogsContext.landingPageVisited ? (<LandingPage />) : (<ZebralogList />) }}
+                {() => ( !ZebralogsContext.landingPageVisited ? <LandingPage /> : <ZebralogList /> )}
             </ZebralogsContext.Consumer>
         )
     }

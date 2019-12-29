@@ -12,7 +12,7 @@ class LandingPage extends Component {
                 <div className='landing-page'>
                     <h1>Welcome to Zebralogs!</h1>
                     <h3 className='app-description'>This app allows any sports official to track their game details and payment information. It includes a 'Download CSV' button for organized record keeping.</h3>
-                    <button onClick={setlandingPageVisited()}>
+                    <button onClick={() => setlandingPageVisited()}>
                         Let's Get Started!
                     </button>
                 </div>
