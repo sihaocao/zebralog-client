@@ -5,7 +5,7 @@ import './LandingPage.css';
 class LandingPage extends Component {
     render() {
         let setlandingPageVisited = () => {
-            context.landingPageVisited = true;
+            ZebralogsContext.landingPageVisited = true;
         }
         return (
             <ZebralogsContext.Consumer>
