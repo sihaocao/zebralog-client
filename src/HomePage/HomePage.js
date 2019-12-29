@@ -6,13 +6,14 @@ import './HomePage.css';
 
 class HomePage extends Component {
     render() {
-        console.log(ZebralogsContext.landingPageVisited)
         return (
-            // if (!ZebralogsContext.landingPageVisited) {
-            //     <LandingPage />
-            // } else {
-            //     <ZebralogList />
-            // }
+            <ZebralogsContext.Consumer>
+                if (!ZebralogsContext.landingPageVisited) {
+                    <LandingPage />
+                } else {
+                    <ZebralogList />
+                }
+            </ZebralogsContext.Consumer>
         )
     }
 }
