@@ -6,6 +6,7 @@ const ZebralogsContext = React.createContext({
     deleteZebralog: () => {},
     updateZebralog: () => {},
     onChange: () => {},
+    landingPageVisited: false,
 });
 
 export default ZebralogsContext;
