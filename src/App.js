@@ -98,9 +98,9 @@ class App extends Component {
     } 
     return (
       <div>
-        (!ZebralogsContext.landingPageVisited)
-          ? <LandingPage />
-          :
+        if (!ZebralogsContext.landingPageVisited) {
+          <LandingPage />
+        } else {
           <main className='App'>
             <div className='App__Logo__Title'>
               <img className='App__Logo' src={SiteLogo} alt='site logo of zebra emblem'/>
@@ -132,6 +132,7 @@ class App extends Component {
               </div>
             </ZebralogsContext.Provider>
           </main>
+        }
       </div>
     )
   }
