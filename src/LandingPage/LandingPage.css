@@ -5,5 +5,20 @@
 
 .app-description {
     width: 50%;
-    margin: 0 auto;
+    margin: 50px auto;
+    font-size: 24px;
+}
+
+button {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #32BD16;
+    color: white;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #6FD16C;
+    color: #23395d;
 }
