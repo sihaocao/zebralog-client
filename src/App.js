@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import HomePage from './HomePage/HomePage';
+import LandingPage from './LandingPage/LandingPage';
+import ZebralogList from './ZebralogList/ZebralogList';
 import AddZebralog from './AddZebralog/AddZebralog';
 import EditZebralog from './EditZebralog/EditZebralog';
 import ZebralogsContext from './ZebralogsContext';
@@ -13,6 +14,7 @@ class App extends Component {
   state = {
     zebralogs: [],
     filteredZebralogs: [],
+    landingPageVisited: false,
     error: null
   };
 
@@ -86,6 +88,12 @@ class App extends Component {
     })
   }
 
+  exitLandingPage = () => {
+    this.setState({ 
+      landingPageVisited: true 
+    });
+  };
+
   render() {
     const contextValue = {
       zebralogs: this.state.zebralogs,
@@ -101,16 +109,24 @@ class App extends Component {
           <img className='App__Logo' src={SiteLogo} alt='site logo of zebra emblem'/>
           <h1 className='App__Title'>ZebraLogs</h1>
         </div>
-        <ZebralogsContext.Consumer>
-          {() => ( !ZebralogsContext.landingPageVisited ? null : <Route exact path='/'><div className='Navigation__Buttons'><Nav db_values={this.state.zebralogs} /></div></Route> )}
-        </ZebralogsContext.Consumer>
         <ZebralogsContext.Provider value={contextValue}>
+          {this.state.landingPageVisited 
+            ? (<div className="Navigation__Buttons">
+                <Nav db_values={this.state.zebralogs} />
+              </div>
+              ) 
+            : null
+          }
           <div className='content' aria-live='polite'>
-            <Route
-              exact
-              path='/'
-              component={HomePage}
-            />
+            <Route 
+              exact 
+              path="/"
+            >
+              { this.state.landingPageVisited 
+                ? (<ZebralogList />) 
+                : (<LandingPage exitLandingPage={this.exitLandingPage} />) 
+              }
+            </Route>
             <Route
               path='/add-zebralog'
               component={AddZebralog}
