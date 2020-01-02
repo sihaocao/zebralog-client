@@ -83,3 +83,34 @@ select:focus,
 select:hover {
     background-color: lightyellow;
 }
+
+@media screen and (max-width: 1000px) {
+    .EditZebralog__header {
+        margin-top: 5%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .EditZebralog__header {
+        margin-top: 7%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .EditZebralog__header {
+        margin-bottom: 5%;
+    }
+    
+    .EditZebralog__form label {
+        font-size: 16px;
+    }
+
+    .EditZebralog__form input,
+    .EditZebralog__form select {
+        font-size: 12px;
+    }
+
+    .EditZebralog__form select {
+        font-size: 12px;
+    }
+}

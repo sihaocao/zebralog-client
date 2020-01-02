@@ -44,3 +44,53 @@
     background-color: #32CC32;
     color: #303030;
 }
+
+@media screen and (max-width: 980px) {
+    .Download__Button {
+        font-size: 0.8em;
+    }
+
+    .AddEntry__Button {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .Download__Button {
+        font-size: 0.7em;
+    }
+
+    .AddEntry__Button {
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .Download__Button {
+        font-size: 0.5em;
+    }
+
+    .AddEntry__Button {
+        font-size: 0.5em;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .Download__Button {
+        font-size: 8px;
+    }
+
+    .AddEntry__Button {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 445px) {
+    .Download__Button {
+        font-size: 6px;
+    }
+
+    .AddEntry__Button {
+        font-size: 6px;
+    }
+}

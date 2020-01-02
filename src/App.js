@@ -49,6 +49,12 @@ class App extends Component {
   }
 
   componentDidMount() {
+    const localLandingPageVisited = localStorage.getItem('localLandingPageVisited')
+    if (localLandingPageVisited) {
+      this.setState({ 
+        landingPageVisited: true 
+      });
+    }
     fetch(`${config.API_ENDPOINT}/api/zebralogs`, {
       method: 'GET',
       headers: {
@@ -89,6 +95,7 @@ class App extends Component {
   }
 
   exitLandingPage = () => {
+    localStorage.setItem('localLandingPageVisited', 'true')
     this.setState({ 
       landingPageVisited: true 
     });
@@ -110,13 +117,15 @@ class App extends Component {
           <h1 className='App__Title'>ZebraLogs</h1>
         </div>
         <ZebralogsContext.Provider value={contextValue}>
-          {this.state.landingPageVisited 
-            ? (<div className="Navigation__Buttons">
-                <Nav db_values={this.state.zebralogs} />
-              </div>
-              ) 
-            : null
-          }
+          <Route
+            exact
+            path='/'
+          >
+            { this.state.landingPageVisited
+              ? (<div className="Navigation__Buttons"><Nav db_values={this.state.zebralogs} /></div>)
+              : null
+            }
+          </Route>
           <div className='content' aria-live='polite'>
             <Route 
               exact 

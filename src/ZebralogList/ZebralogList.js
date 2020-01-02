@@ -54,6 +54,7 @@ class ZebralogList extends Component {
                         name='site'
                         onChange={this.onChange}
                     />
+                    <p className='Zebralogs__Note'>* Most recent entry will be added to the top of the list *</p>
                 </form>
                 <section className='ZebralogList'>
                     <ul className='Zebralog__ListHeaders'>
@@ -68,6 +69,7 @@ class ZebralogList extends Component {
                         )}
                     </ul>
                 </section>
+                <p className='ZebralogsList__Copyright'>Copyright &copy; 2020 - <a href='https://sihaocao.github.io' target='_blank' rel='noopener noreferrer'>Sihao Cao</a></p>
             </Fragment>
         )
     }

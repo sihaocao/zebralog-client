@@ -19,6 +19,16 @@
     border-radius: 10px;
 }
 
+.Zebralogs__Note {
+    margin-top: 3%;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.ZebralogList {
+    margin-bottom: 25px;
+}
+
 .Zebralog__ListHeaders {
     display: flex;
     list-style-type: none;
@@ -81,4 +91,94 @@
     padding: 0%;
     width: 90%;
     margin: 0% auto;
+}
+
+.ZebralogsList__Copyright {
+    margin: 25px auto;
+    text-align: center;
+    font-size: 16px;
+    color: #000036;
+    font-weight: 400;
+}
+
+.ZebralogsList__Copyright a {
+    text-decoration: none;
+}
+
+.ZebralogsList__Copyright a:hover {
+    color: #0000cc;
+}
+
+@media screen and (max-width: 1200px) {
+    .Zebralogs__Site__SearchBox {
+        font-size: 0.8em;
+    }
+
+    .Zebralogs__Note {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .ZebralogList__FormGroup {
+        font-size: 0.8em;
+    }
+
+    .Zebralog__ListHeaders {
+        font-size: 12px;
+    }
+
+    .ZebralogsList__Copyright {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .Zebralog__ListHeaders {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .ZebralogList__FormGroup {
+        font-size: 0.6em;
+    }
+
+    .Zebralog__ListHeaders {
+        font-size: 8px;
+    }
+
+    .ZebralogsList__Copyright {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .Zebralogs__Site__SearchBox {
+        font-size: 7px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .ZebralogList__FormGroup {
+        font-size: 0.5em;
+    }
+
+    .Zebralogs__Site__SearchBox {
+        font-size: 6px;
+    }
+
+    .Zebralog__ListHeaders {
+        font-size: 6px;
+    }
+
+    .ZebralogsList__Copyright {
+        font-size: 6px;
+    }
+}
+
+@media screen and (max-width: 445px) {
+    .Zebralogs__Note {
+        font-size: 8px;
+    }
 }

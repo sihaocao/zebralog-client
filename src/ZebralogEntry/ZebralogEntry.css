@@ -96,3 +96,88 @@
     background-color: #FF0000;
     color: #333333;
 }
+
+@media screen and (max-width: 1092px) {
+    .Edit__Button {
+        font-size: 0.8em;
+    }
+
+    .Delete__Button {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .ZebralogEntry {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .ZebralogEntry {
+        font-size: 10px;
+    }
+
+    .Edit__Button {
+        font-size: 0.65em;
+    }
+
+    .Delete__Button {
+        font-size: 0.65em;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .ZebralogEntry {
+        font-size: 8px;
+    }
+
+    .Edit__Button {
+        font-size: 0.5em;
+        padding: 1px 3px 1px 3px;
+    }
+
+    .Delete__Button {
+        font-size: 0.5em;
+        padding: 1px 3px 1px 3px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .ZebralogEntry {
+        font-size: 6px;
+    }
+
+    .Edit__Button {
+        padding: 0.5px 1.5px 0.5px 1.5px;
+    }
+
+    .Delete__Button {
+        padding: 0.5px 1.5px 0.5px 1.5px;
+    }
+}
+
+@media screen and (max-width: 445px) {
+    .Edit__Button {
+        padding: 0.25px 0.75px 0.25px 0.75px;
+    }
+
+    .Delete__Button {
+        padding: 0.25px 0.75px 0.25px 0.75px;
+    }
+}
+
+@media screen and (max-width: 402px) {
+    .Edit__Button {
+        display: block;
+        width: 65%;
+        text-align: center;
+        margin-bottom: 1px;
+    }
+
+    .Delete__Button {
+        display: block;
+        width: 65%;
+        text-align: center;
+    }
+} 
