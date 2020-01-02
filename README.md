@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Zebralogs -- web application
+Zebralogs allows any sports official to track one's contest information along with the ability to export the list of entries.
+<img src='screenshots/main-page.png'>
+## Demo
+* [Live Page](https://zebralog-client.now.sh/)
+## App Motivation
+Zebralogs is for those hobby sports officials who wish to log the distance they've travelled to game sites as well as keeping track of how much they are getting paid for each game worked. As a sports official myself, I like to log the aforementioned information in an app so I can have all the pertinent data at my disposal when it comes to tax time to accurately report my income (e.g., game fees) and expenses (e.g., miles driven) as a independent contractor. 
+## App Description 
+Zebralogs is a full-stack web app built with React, CSS, Node, Express, and Postgresql. This website does not use any third-party API. This website is supported on Chrome, Firefox, and Safari. This app is a fully responsive website.
+## Screenshots
+* Landing Page:
 
-## Available Scripts
+<img src='screenshots/landing-page.png'>
 
-In the project directory, you can run:
+* Main Page:
 
-### `npm start`
+<img src='screenshots/main-page.png'>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Create Entry Button:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<img src='screenshots/create-entry-button.jpeg'>
 
-### `npm test`
+* Create Entry Page:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src='screenshots/create-entry.png'>
 
-### `npm run build`
+* Search for Site Description:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src='screenshots/search-by-site.jpeg'>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Edit Entry Button:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src='screenshots/edit-entry-button.jpeg'>
 
-### `npm run eject`
+* Edit Entry Page:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<img src='screenshots/edit-entry.png'>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Delete Entry Button:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<img src='screenshots/delete-entry-button.jpeg'>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Download CSV Button:
 
-## Learn More
+<img src='screenshots/download-csv.jpeg'>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## How to Use the App
+Users can create a new entry by clicking on the "Add Entry" button and then completing the "Add Entry" form. They can also update an existing entry by clicking on the "Edit" button and completing the "Edit Entry" form. For any entry that they wish to delete, users can click on the "Del" button and a window will pop up confirming if they do indeed want to delete the selected entry. If users wish to proceed with the delete process, they can click on the "OK" button in the pop-up dialog box. if users want to search for a specific site, they can use the search input box located above the list of entries. For record keeping purposes, users can also export the current list of entries as a CSV file by clicking on the "Download CSV" button.
+## Built With
+* Reactjs
+* Vanilla CSS
+* Node.js
+* Express.js
+* Postgresql
+## Authors
+* Sihao Cao
