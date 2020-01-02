@@ -1,12 +1,11 @@
+<img src='screenshots/main-page.png'>
 # Zebralogs -- web application
 * Zebralogs allows any sports official to track one's contest information along with the ability to export the list of entries.
-
-<img src='screenshots/main-page.png'>
 ## Demo
-[Live Page](https://zebralog-client.now.sh/)
+* [Live Page](https://zebralog-client.now.sh/)
 ## App Motivation
-* Zebralogs is for those hobby sports officials who wish to log the distance they've travelled to game sites as well as keeping track of how much they are getting paid for each game worked. As a sports official myself, I like to log the aforementioned information in an app so I can have all the pertinent data at my disposal when it comes to tax time to accurately report my income (e.g., game fees) and expenses (e.g., miles driven) as a independent contractor. 
-## App Description 
+* Zebralogs is for those hobby sports officials who wish to log the distance they've travelled to game sites as well as keeping track of how much they are getting paid for each game worked. As a sports official myself, I like to log the aforementioned information in an app so I can have all the pertinent data at my disposal when it comes to tax time to accurately report my income (e.g., game fees) and expenses (e.g., miles driven) as a independent contractor.
+## App Description
 * Zebralogs is a full-stack web app built with React, CSS, Node, Express, and Postgresql. This website does not use any third-party API. This website is supported on Chrome, Firefox, and Safari. This app is a fully responsive website.
 ## Screenshots
 * Landing Page:
