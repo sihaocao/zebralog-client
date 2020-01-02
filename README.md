@@ -3,7 +3,7 @@
 
 <img src='screenshots/main-page.png'>
 ## Demo
-* [Live Page](https://zebralog-client.now.sh/)
+[Live Page](https://zebralog-client.now.sh/)
 ## App Motivation
 * Zebralogs is for those hobby sports officials who wish to log the distance they've travelled to game sites as well as keeping track of how much they are getting paid for each game worked. As a sports official myself, I like to log the aforementioned information in an app so I can have all the pertinent data at my disposal when it comes to tax time to accurately report my income (e.g., game fees) and expenses (e.g., miles driven) as a independent contractor. 
 ## App Description 
