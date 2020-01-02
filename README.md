@@ -1,7 +1,7 @@
 <img src='screenshots/main-page.png'>
 
 # Zebralogs -- web application
-Zebralogs allows any sports official to track one's contest information along with the ability to export the list of entries.
+* Zebralogs allows any sports official to track one's contest information along with the ability to export the list of entries.
 
 ## Demo
 [Live Page](https://zebralog-client.now.sh/)
