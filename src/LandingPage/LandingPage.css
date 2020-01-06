@@ -5,17 +5,18 @@
 
 .App__Title {
     color: #2C303B;
+    font-size: 16px;
 }
 
 .App__Description {
     width: 35%;
     margin: 50px auto;
-    font-size: 24px;
+    font-size: 12px;
     color: #2C303B;
 }
 
 .LandingPage__Button {
-    font-size: 24px;
+    font-size: 12px;
     font-weight: bold;
     padding: 10px;
     background-color: #32BD16;
@@ -30,7 +31,7 @@
 }
 
 .LandingPage__Copyright {
-    font-size: 16px;
+    font-size: 12px;
     color: #000036;
     font-weight: 400;
 }
@@ -43,7 +44,17 @@
     color: #0000cc;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (min-width: 520px) {
+    .App__Title {
+        font-size: 20px;
+    }
+
+    .App__Description {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 820px) {
     .App__Title {
         font-size: 24px;
     }
@@ -51,40 +62,30 @@
     .App__Description {
         font-size: 20px;
     }
+
+    .LandingPage__Button {
+        font-size: 16px;
+    }
+
+    .LandingPage__Copyright {
+        font-size: 16px;
+    }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 1120px) {
     .App__Title {
+        font-size: 28px;
+    }
+
+    .App__Description {
+        font-size: 24px;
+    }
+
+    .LandingPage__Button {
         font-size: 20px;
     }
 
-    .App__Description {
-        font-size: 16px;
-    }
-
-    .LandingPage__Button {
-        font-size: 16px;
-    }
-
     .LandingPage__Copyright {
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .App__Title {
-        font-size: 16px;
-    }
-
-    .App__Description {
-        font-size: 12px;
-    }
-
-    .LandingPage__Button {
-        font-size: 12px;
-    }
-
-    .LandingPage__Copyright {
-        font-size: 10px;
+        font-size: 20px;
     }
 }

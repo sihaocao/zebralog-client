@@ -7,12 +7,12 @@
 .Download__Button {
     margin-right: 0.25em;
     text-align: center;
-    font-size: 1em;
+    font-size: 8px;
     font-weight: bold;
     text-decoration: none;
     background-color: #157FFB;
     color: #FDFEFF;
-    padding: 6px 18px 6px 18px;
+    padding: 4px 8px 4px 8px;
     border-top: 1px solid #CCCCCC;
     border-right: 1px solid #CCCCCC;
     border-bottom: 1px solid #CCCCCC;
@@ -22,12 +22,12 @@
 
 .AddEntry__Button {
     margin-left: 0.25em;
-    font-size: 1em;
+    font-size: 8px;
     font-weight: bold;
     text-decoration: none;
     background-color: #31A54A;
     color: #F4FAF5;
-    padding: 6px 18px 6px 18px;
+    padding: 4px 8px 4px 8px;
     border-top: 1px solid #CCCCCC;
     border-right: 1px solid #CCCCCC;
     border-bottom: 1px solid #CCCCCC;
@@ -45,52 +45,62 @@
     color: #303030;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (min-width: 420px) {
     .Download__Button {
-        font-size: 0.8em;
+        font-size: 10px;
     }
 
     .AddEntry__Button {
-        font-size: 0.8em;
+        font-size: 10px;
     }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (min-width: 620px) {
     .Download__Button {
-        font-size: 0.7em;
+        font-size: 12px;
     }
 
     .AddEntry__Button {
-        font-size: 0.7em;
+        font-size: 12px;
     }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (min-width: 770px) {
     .Download__Button {
-        font-size: 0.5em;
+        font-size: 14px;
     }
 
     .AddEntry__Button {
-        font-size: 0.5em;
+        font-size: 14px;
     }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (min-width: 1070px) {
     .Download__Button {
-        font-size: 8px;
+        font-size: 16px;
     }
 
     .AddEntry__Button {
-        font-size: 8px;
+        font-size: 16px;
     }
 }
 
-@media screen and (max-width: 445px) {
+@media screen and (min-width: 1320px) {
     .Download__Button {
-        font-size: 6px;
+        font-size: 18px;
     }
 
     .AddEntry__Button {
-        font-size: 6px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 1420px) {
+    .Download__Button {
+        font-size: 20px;
+    }
+
+    .AddEntry__Button {
+        font-size: 20px;
     }
 }

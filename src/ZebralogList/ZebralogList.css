@@ -5,23 +5,23 @@
 }
 
 .ZebralogList__FormGroup {
-    margin: 3% auto;
+    margin: 4% auto;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 9px;
 }
 
 .Zebralogs__Site__SearchBox {
     margin-left: 0.25%;
-    font-size: 1em;
+    font-size: 8px;
     padding: 3px;
-    width: 13%;
+    width: 25%;
     border: 2px #4B4C4C solid;
     border-radius: 10px;
 }
 
 .Zebralogs__Note {
     margin-top: 3%;
-    font-size: 1em;
+    font-size: 8px;
     font-weight: bold;
 }
 
@@ -42,7 +42,7 @@
     padding-top: 1%;
     padding-bottom: 1%;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 8px;
 }
 
 .ZebralogList__game_date {
@@ -62,13 +62,11 @@
 }
 
 .ZebralogList__paid {
-    width: 50%;
-    text-align: left;
+    display: none;
 }
 
 .ZebralogList__type {
-    width: 75%;
-    text-align: left;
+    display: none;
 }
 
 .ZebralogList__amount {
@@ -77,8 +75,7 @@
 }
 
 .ZebralogList__notes {
-    width: 100%;
-    text-align: left;
+    display: none;
 }
 
 .ZebralogList__Actions {
@@ -96,7 +93,7 @@
 .ZebralogsList__Copyright {
     margin: 25px auto;
     text-align: center;
-    font-size: 16px;
+    font-size: 8px;
     color: #000036;
     font-weight: 400;
 }
@@ -109,76 +106,190 @@
     color: #0000cc;
 }
 
-@media screen and (max-width: 1200px) {
-    .Zebralogs__Site__SearchBox {
-        font-size: 0.8em;
-    }
-
-    .Zebralogs__Note {
-        font-size: 0.9em;
-    }
-}
-
-@media screen and (max-width: 980px) {
+@media screen and (min-width: 370px) {
     .ZebralogList__FormGroup {
-        font-size: 0.8em;
+        font-size: 11px;
+    }
+    
+    .Zebralogs__Site__SearchBox {
+        font-size: 10px;
+        width: 25%;
+    }
+    
+    .Zebralogs__Note {
+        font-size: 10px;
     }
 
     .Zebralog__ListHeaders {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .ZebralogsList__Copyright {
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width: 850px) {
-    .Zebralog__ListHeaders {
         font-size: 10px;
     }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (min-width: 420px) {
     .ZebralogList__FormGroup {
-        font-size: 0.6em;
+        font-size: 13px;
     }
-
-    .Zebralog__ListHeaders {
-        font-size: 8px;
-    }
-
-    .ZebralogsList__Copyright {
-        font-size: 8px;
-    }
-}
-
-@media screen and (max-width: 620px) {
+    
     .Zebralogs__Site__SearchBox {
-        font-size: 7px;
+        font-size: 12px;
+        width: 25%;
     }
-}
-
-@media screen and (max-width: 540px) {
-    .ZebralogList__FormGroup {
-        font-size: 0.5em;
-    }
-
-    .Zebralogs__Site__SearchBox {
-        font-size: 6px;
-    }
-
-    .Zebralog__ListHeaders {
-        font-size: 6px;
-    }
-
-    .ZebralogsList__Copyright {
-        font-size: 6px;
-    }
-}
-
-@media screen and (max-width: 445px) {
+    
     .Zebralogs__Note {
-        font-size: 8px;
+        font-size: 12px;
+    }    
+    
+    .Zebralog__ListHeaders {
+        font-size: 12px;
+    }
+
+    .ZebralogsList__Copyright {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 520px) {
+    .Zebralogs__Site__SearchBox {
+        width: 22.5%;
+    }
+
+    .ZebralogList__type {
+        display: flex;
+        width: 75%;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 620px) {
+    .ZebralogList__FormGroup {
+        font-size: 15px;
+    }
+    
+    .Zebralogs__Site__SearchBox {
+        font-size: 14px;
+        width: 20%;
+    }
+    
+    .Zebralogs__Note {
+        font-size: 14px;
+    }
+
+    .Zebralog__ListHeaders {
+        font-size: 14px;
+    }
+
+    .ZebralogsList__Copyright {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 670px) {
+    .ZebralogList__paid {
+        display: flex;
+        width: 50%;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 770px) {
+    .ZebralogList__FormGroup {
+        font-size: 17px;
+    }
+    
+    .Zebralogs__Site__SearchBox {
+        font-size: 16px;
+        width: 20%;
+    }
+    
+    .Zebralogs__Note {
+        font-size: 16px;
+    }
+
+    .Zebralog__ListHeaders {
+        font-size: 16px;
+    }
+
+    .ZebralogsList__Copyright {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 920px) {
+    .Zebralogs__Site__SearchBox {
+        width: 17.5%;
+    }
+}
+
+@media screen and (min-width: 1070px) {
+    .Zebralogs__Site__SearchBox {
+        width: 15%;
+    }
+}
+
+@media screen and (min-width: 1170px) {
+    .ZebralogList__FormGroup {
+        margin-bottom: 3%;
+    }
+
+    .Zebralogs__Site__SearchBox {
+        width: 12.5%;
+    }
+}
+
+@media screen and (min-width: 1220px) {
+    .ZebralogList__notes {
+        display: flex;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 1320px) {
+    .ZebralogList__FormGroup {
+        font-size: 19px;
+    }
+    
+    .Zebralogs__Site__SearchBox {
+        font-size: 18px;
+        width: 12.5%;
+    }
+    
+    .Zebralogs__Note {
+        font-size: 18px;
+    }
+
+    .Zebralog__ListHeaders {
+        font-size: 18px;
+    }
+
+    .ZebralogsList__Copyright {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 1420px) {
+    .ZebralogList__FormGroup {
+        font-size: 21px;
+    }
+    
+    .Zebralogs__Site__SearchBox {
+        font-size: 20px;
+        width: 15%;
+    }
+    
+    .Zebralogs__Note {
+        font-size: 20px;
+    }
+
+    .Zebralog__ListHeaders {
+        font-size: 20px;
+    }
+
+    .ZebralogsList__Copyright {
+        font-size: 20px;
     }
 }

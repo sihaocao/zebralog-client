@@ -14,6 +14,7 @@
     margin-left: 0%;
     margin-right: 0%;
     border-bottom: 1px #DFE3E7 solid;
+    font-size: 8px;
 }
 
 .ZebralogEntry:nth-child(even) {
@@ -37,13 +38,11 @@
 }
 
 .ZebralogEntry__paid {
-    width: 50%;
-    text-align: left;
+    display: none;
 }
 
 .ZebralogEntry__type {
-    width: 75%;
-    text-align: left;
+    display: none;
 }
 
 .ZebralogEntry__amount {
@@ -52,8 +51,7 @@
 }
 
 .ZebralogEntry__notes {
-    width: 100%;
-    text-align: left;
+    display: none;
 }
 
 .ZebralogEntry__buttons {
@@ -72,6 +70,10 @@
     border-bottom: 1px solid #CCCCCC;
     border-left: 1px solid #CCCCCC;
     border-radius: 10px;
+    display: block;
+    width: 75%;
+    text-align: center;
+    margin-bottom: 3px;
 }
 
 .Delete__Button {
@@ -85,6 +87,9 @@
     border-bottom: 1px solid #CCCCCC;
     border-left: 1px solid #CCCCCC;
     border-radius: 10px;
+    display: block;
+    width: 75%;
+    text-align: center;
 }
 
 .Edit__Button:hover {
@@ -97,87 +102,86 @@
     color: #333333;
 }
 
-@media screen and (max-width: 1092px) {
-    .Edit__Button {
-        font-size: 0.8em;
-    }
-
-    .Delete__Button {
-        font-size: 0.8em;
+@media screen and (min-width: 370px) {
+    .ZebralogEntry {
+        font-size: 10px;
     }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (min-width: 420px) {
     .ZebralogEntry {
         font-size: 12px;
     }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (min-width: 520px) {
+    .ZebralogEntry__type {
+        display: flex;
+        width: 75%;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 620px) {
     .ZebralogEntry {
-        font-size: 10px;
-    }
+        font-size: 14px;
+    }    
+}
 
-    .Edit__Button {
-        font-size: 0.65em;
-    }
-
-    .Delete__Button {
-        font-size: 0.65em;
+@media screen and (min-width: 670px) {
+    .ZebralogEntry__paid {
+        display: flex;
+        width: 50%;
+        text-align: left;
     }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (min-width: 770px) {
     .ZebralogEntry {
-        font-size: 8px;
-    }
-
-    .Edit__Button {
-        font-size: 0.5em;
-        padding: 1px 3px 1px 3px;
-    }
-
-    .Delete__Button {
-        font-size: 0.5em;
-        padding: 1px 3px 1px 3px;
+        font-size: 16px;
     }
 }
 
-@media screen and (max-width: 540px) {
-    .ZebralogEntry {
-        font-size: 6px;
-    }
-
+@media screen and (min-width: 1020px) {
     .Edit__Button {
-        padding: 0.5px 1.5px 0.5px 1.5px;
-    }
-
-    .Delete__Button {
-        padding: 0.5px 1.5px 0.5px 1.5px;
-    }
-}
-
-@media screen and (max-width: 445px) {
-    .Edit__Button {
-        padding: 0.25px 0.75px 0.25px 0.75px;
-    }
-
-    .Delete__Button {
-        padding: 0.25px 0.75px 0.25px 0.75px;
-    }
-}
-
-@media screen and (max-width: 402px) {
-    .Edit__Button {
-        display: block;
-        width: 65%;
-        text-align: center;
-        margin-bottom: 1px;
-    }
-
-    .Delete__Button {
-        display: block;
-        width: 65%;
+        display: inline-block;
+        width: 45%;
         text-align: center;
     }
-} 
+
+    .Delete__Button {
+        display: inline-block;
+        width: 45%;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1220px) {
+    .ZebralogEntry__notes {
+        display: flex;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 1320px) {
+    .ZebralogEntry {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 1420px) {
+    .ZebralogEntry {
+        font-size: 20px;
+    }    
+}
+
+@media screen and (min-width: 1600px) {
+    .Edit__Button {
+        width: 47.5%;
+    }
+
+    .Delete__Button {
+        width: 47.5%;
+    }    
+}
